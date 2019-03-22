@@ -2,8 +2,8 @@
 #define IMAGEREADER_H
 
 #include<fstream>
-#include "../header/commandprocessor.h"
-#include "../header/counter.h"
+#include "commandprocessor.h"
+#include "counter.h"
 
 using namespace std;
 class ImageReader {

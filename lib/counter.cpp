@@ -1,4 +1,4 @@
-#include "../header/counter.h"
+#include "./header/counter.h"
 
 void Counter::increment(int i){
 

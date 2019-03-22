@@ -7,13 +7,13 @@ count-areas: main.o counter.o imagereader.o commandProcessor.o
 
 main.o: src/main.cpp
 		$(CC) $(CFLAGS) -c src/main.cpp && mv main.o objects
-counter.o: src/counter.cpp
-		$(CC) $(CFLAGS) -c src/counter.cpp && mv counter.o objects
-imagereader.o: src/imagereader.cpp
-		$(CC) $(CFLAGS) -c src/imagereader.cpp && mv imagereader.o objects
+counter.o: lib/counter.cpp
+		$(CC) $(CFLAGS) -c lib/counter.cpp && mv counter.o objects
+imagereader.o: lib/imagereader.cpp
+		$(CC) $(CFLAGS) -c lib/imagereader.cpp && mv imagereader.o objects
 
-commandProcessor.o: src/commandProcessor.cpp
-		$(CC) $(CFLAGS) -c src/commandProcessor.cpp && mv commandProcessor.o objects
+commandProcessor.o: lib/commandProcessor.cpp
+		$(CC) $(CFLAGS) -c lib/commandProcessor.cpp && mv commandProcessor.o objects
 
 clean: 
 	  rm -rf core *.o

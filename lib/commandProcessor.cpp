@@ -1,7 +1,7 @@
 #ifndef COMMANDPROCESSSOR_CPP
 #define COMMANDPROCESSSOR_CPP
 
-#include "../header/commandprocessor.h"
+#include "./header/commandprocessor.h"
 
 bool CommandProcessor::processCommand(int argc,  char **argv){                                                
     if(argc != 4){

@@ -1,7 +1,7 @@
 #ifndef IMAGEREADER_CPP
 #define IMAGEREADER_CPP
 
-#include "../header/imagereader.h"
+#include "./header/imagereader.h"
 
 void ImageReader::readImage(CommandProcessor cp){
     

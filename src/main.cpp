@@ -1,6 +1,20 @@
+#ifndef MAIN_H
+#define MAIN_H
+
 #include<iostream>
+#include "../header/commandprocessor.h"
+#include "../header/imagereader.h"
+
 using namespace std;
 
-int main(int argc, char* argv[]) {
-    cout << argc;
+int main(int argc, char *argv[]) {
+    CommandProcessor cp;
+    if(!cp.processCommand(argc, argv)) return 0;
+
+    // now read image
+    //cout << "Image Name " << cp.getImageName();
+    ImageReader ir;
+    ir.readImage(cp);
 }
+
+#endif

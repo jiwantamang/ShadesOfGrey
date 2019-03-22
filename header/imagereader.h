@@ -1,11 +1,21 @@
+#ifndef IMAGEREADER_H
+#define IMAGEREADER_H
+
 #include<fstream>
+#include "../header/commandprocessor.h"
+#include "../header/counter.h"
 
 using namespace std;
 class ImageReader {
     private: 
-        unsigned char* image;        
+        unsigned char* image;
         ifstream infile;
+        Counter counter;
+        int b,g,w;
     public:
-        void readImage(char filename[20]);
+        void readImage(CommandProcessor cp);
+        void extractShedColor();
         unsigned char* getImage();
 };
+
+#endif

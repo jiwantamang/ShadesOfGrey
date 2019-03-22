@@ -10,9 +10,9 @@ class ImageReader {
     private: 
         unsigned char* image;
         ifstream infile;
-        Counter counter;
-        int b,g,w;
-    public:
+        Counter counter;        
+        Dimension d;
+    public:        
         void readImage(CommandProcessor cp);
         void extractShedColor();
         unsigned char* getImage();

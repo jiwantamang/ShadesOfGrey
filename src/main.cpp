@@ -15,7 +15,9 @@ int main(int argc, char *argv[]) {
     //cout << "Image Name " << cp.getImageName();
     ImageReader ir;
     ir.readImage(cp);
+    ir.extractShedColor();
 
+    
     
 }
 

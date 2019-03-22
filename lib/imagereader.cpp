@@ -5,33 +5,35 @@
 
 void ImageReader::readImage(CommandProcessor cp){
     
-    Dimension d = cp.getDimension();
+    d = cp.getDimension();
     image = new unsigned char[d.width * d.height];  // Allocate memory for the image
     infile.open("sample.bin", ios::binary);        // Open the image file
     infile.read(reinterpret_cast <char*> (image), d.width * d.height);  // Read the image into memory
+}
 
+void ImageReader::extractShedColor() {    
     for(int i = 0; i < 255 ; i++){
         for(int j = 0; j < 255; j++) {
             int c = (int) image[i * d.width + j];
             //cout << c << endl;
             switch (c)
             {
-                case 0:
-                    b = b+1;
+                case 0:                    
+                    counter.increment(0);
                     break;
                 case 200:
-                    g = g+1;
+                    counter.increment(200);                    
                     break;
                 case 255:
-                    w = w +1;
+                    counter.increment(255);                    
                     break;
                 
             }            
         }        
     }
 
-    cout << "Colors[ Black = " << b << ", White = " << w << ", Gray = " << g << "]";
-    
+    counter.display();
+    //cout << "Colors[ Black = " << b << ", White = " << w << ", Gray = " << g << "]";
 
 }
 
